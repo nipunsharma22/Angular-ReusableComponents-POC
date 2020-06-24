@@ -1,0 +1,23 @@
+.tag {
+    border-radius: 50% !important;
+    height: 15px !important;
+    width: 15px !important;
+    display: inline-block !important; 
+  }
+  
+  .tag-default {
+    background-color: gray;
+  }
+  
+  .tag-success {
+    background-color: green;
+  }
+  
+  .tag-warning {
+    background-color: orange;
+  }
+  
+  .tag-danger {
+    background-color: red;
+  }
+  

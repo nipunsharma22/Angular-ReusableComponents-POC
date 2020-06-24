@@ -1,0 +1,13 @@
+<app-confirmation-dialog></app-confirmation-dialog>
+<app-loader [loading]="isLoading"></app-loader>
+<app-header *ngIf="isHeaderVisible"></app-header>
+<app-timer
+  (TimerExpired)="idleTimeExpired()"
+  *ngIf="isHeaderVisible"
+  style="display: none;"
+>
+</app-timer>
+<div class="container-fluid" appScreenResize appevent>
+  <router-outlet></router-outlet>
+</div>
+

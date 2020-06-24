@@ -1,0 +1,110 @@
+<div class="container-fluid p-0">
+  <section class="login_wrapper">
+    <div class="row">
+      <app-loader [loading]="isLoading"></app-loader>
+      <!-- <div class="col-xl-8 col-lg-7 col-md-12 col-md-12 col-sm-12 login-left">
+        <div class="banner-txt col-xl-8 col-lg-10 col-md-11 col-sm-11">
+          <img src="./assets/images/rsystems.png" width="300"/>
+          <h1>{{ loginTitles.default.SIGN_IN_TITLE }}</h1>
+          <p>
+            {{ loginTitles.default.LOGIN_PAGE_BODY_TEXT }}
+          </p> 
+        </div>
+      </div> -->
+      <div class="col-xl-4 col-lg-5 col-md-12 col-sm-12 login-right">
+         <div class="login-control">
+          <div
+            class="alert alert-danger"
+            *ngIf="errorMessage"
+            style="width: 100%;"
+          >
+            <span data-bind="text: errorMessage">{{
+              loginTitles.default.LOGIN_VALIDATION_MESSAGE
+            }}</span>
+          </div>
+         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div id="loginDiv">
+              <div class="text-center">
+                <img src="./assets/images/rsystems.png" width="200"/>
+              </div>
+              <h1>{{ loginTitles.default.LOGIN_TITLE }}</h1>
+              <div class="field form-group">
+                <div class="iconShow">
+                  <i class="fas fa-user-alt"></i>
+                  <input
+                    formControlName="username"
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+                    type="text"
+                    id="userName"
+                    #username
+                    placeholder="Email\Username "
+                    autocomplete="off"
+                    maxlength="50"
+                    tabindex="1"
+                    
+                  />
+                  <a
+                    href="javascript:void(0);"
+                    class="reset-link"
+                    *ngIf="username.value != ''"
+                    (click)="clearUser()"
+                  >
+                    <i class="fas fa-times "></i
+                  ></a>
+                </div>
+              </div>
+
+              <div class="field form-group">
+                <div class="iconShow">
+                  <i class="fas fa-lock"></i>
+                  <input
+                    formControlName="password"
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                    type="password"
+                    id="password"
+                    placeholder="**************"
+                    autocomplete="off"
+                    maxlength="128"
+                    #password
+                    tabindex="2"
+                  />
+
+                  <a
+                    href="javascript:void(0);"
+                    class="reset-link"
+                    *ngIf="password.value != ''"
+                    (click)="clearPassword()"
+                    
+
+                  >
+                    <i class="fas fa-times "></i
+                  ></a>
+                </div>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="loginForm.invalid"
+              >
+                {{ loginTitles.default.LOGIN_BUTTON_TEXT }}
+              </button>
+            </div>
+          </form>
+          <div class="row" style="margin: 0 auto;" *ngIf="isSessionTimeExpired">
+            <!--alert message starts-->
+            <span
+              class="col-12 alert-warning"
+              style="padding: 5px; text-align: center; border-radius: 5px; font-size: 10pt; font-weight: 600;"
+            >
+              Your Session has been expired.
+            </span>
+            <!--alert message ends-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+

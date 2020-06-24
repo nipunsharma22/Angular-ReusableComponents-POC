@@ -1,0 +1,21 @@
+{
+  "MENU_HEADER_TITLE":"Rsystems",
+  "RIGHT_PANE_TITLE":"Connection",
+  "NON_AUTHORIZATION_MESSAGE":"Your session is expired , please refresh the window to re-generate the access token",
+  "VERSION_DETAIL_TITLE": "On-Prem ACME Main Server - Active Library",
+  "USER_GROUP_COLOR_CODE":"#B7B7B7",
+  "METADATA_COLOR_CODE":"#1A98C6",
+  "CONTAINERS_COLOR_CODE":"#027",
+  "DOCUMENTS_COLOR_CODE":"#FF9933",
+  "OTHER_COLOR_CODE":"#525252",
+  "USER_GROUP_CATEGORY":"Users & Groups",
+  "METADATA_CATEGORY":"Metadata",
+  "CONTAINERS_CATEGORY":"Containers",
+  "DOCUMENTS_CATEGORY":"Documents",
+  "OTHER_CATEGORY":"Other",
+  "USER_GROUP_ORDER":1,
+  "CONTAINERS_ORDER":2,
+  "METADATA_ORDER":3,
+  "DOCUMENTS_ORDER":4,
+  "OTHER_ORDER":5
+}

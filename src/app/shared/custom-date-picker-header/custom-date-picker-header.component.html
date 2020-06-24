@@ -1,0 +1,29 @@
+<div class="custom-header-label-top">
+  <div class="year">{{ yearLabel }}</div>
+  <div class="date">{{ dateLabel }}</div>
+</div>
+<div class="custom-header">
+  <!-- <button
+    mat-icon-button
+    class="custom-double-arrow"
+    (click)="previousClicked('year')"
+  >
+    <mat-icon>keyboard_arrow_left</mat-icon>
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button> -->
+  <button mat-icon-button (click)="previousClicked('month')">
+    <i class="fa fa-angle-left" width="16"></i>
+  </button>
+  <span class="custom-header-label">{{ periodLabel }}</span>
+  <button mat-icon-button (click)="nextClicked('month')">
+    <i class="fa fa-angle-right" width="16"></i>
+  </button>
+  <!-- <button
+    mat-icon-button
+    class="custom-double-arrow"
+    (click)="nextClicked('year')"
+  >
+    <mat-icon>keyboard_arrow_right</mat-icon>
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button> -->
+</div>

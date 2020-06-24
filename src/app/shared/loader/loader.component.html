@@ -1,0 +1,44 @@
+<div class="progress-loader loading-screen-wrapper" *ngIf="loading">
+  <div class="loading-screen-icon">
+    <mat-progress-spinner [mode]="'indeterminate'"> </mat-progress-spinner>
+  </div>
+</div>
+
+
+<div class="progress-loader folderPopuploading" *ngIf="folderPopuploading">
+  <div class="loading-screen-icon">
+    <mat-progress-spinner [mode]="'indeterminate'"> </mat-progress-spinner>
+  </div>
+</div>
+
+<div class="progress-loader loading-screen-wrapper" *ngIf="folderloading">
+  <div class="loading-screen-icon">
+    <div class="row" style="margin-left: 22px;">
+      <mat-progress-spinner [mode]="'indeterminate'"> </mat-progress-spinner>
+    </div>
+    <div class="row" style="margin-right: 13px;">
+      Waiting for iManage data...
+    </div>
+  </div>
+</div>
+
+<div class="progress-loader loading-screen-wrapper" *ngIf="clientfolderloading">
+  <div class="loading-screen-icon">
+    <div class="row" style="margin-left: 22px;">
+      <mat-progress-spinner [mode]="'indeterminate'"> </mat-progress-spinner>
+    </div>
+    <div class="row" style="margin-right: 13px;">
+      Waiting for folder package lists...
+    </div>
+  </div>
+</div>
+<div class="progress-loader loading-screen-wrapper" *ngIf="clientfoldertemp">
+  <div class="loading-screen-icon">
+    <div class="row" style="margin-left: 22px;">
+      <mat-progress-spinner [mode]="'indeterminate'"> </mat-progress-spinner>
+    </div>
+    <div class="row" style="margin-right: 13px;">
+      Loading template...
+    </div>
+  </div>
+</div>

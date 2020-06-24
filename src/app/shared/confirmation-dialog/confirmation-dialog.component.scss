@@ -1,0 +1,117 @@
+.modal-body {
+    min-height: 210px;
+}
+
+.modal-body-small {
+    min-height: 23px !important;
+}
+
+.modal-footer-small {
+    height: 51px !important;
+    flex-wrap: nowrap !important;
+}
+
+.btn-save {
+    color: #fff;
+    background-color: #027;
+    border-color: #000;
+    min-width: 50px;
+    margin-right: 12px;
+}
+
+.btn-cancel {
+    color: #000;
+    background-color: #fff;
+    border-color: #ccc;
+    min-width: 50px;
+}
+
+.modal-body h6 {
+    font-weight: 400;
+}
+
+h4.modal-title {
+    font-weight: 400;
+    font-size: 14pt;
+    color: #000;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.modal-footer {
+    background: #f1f1f1 !important;
+    font-size: 11pt;
+    height: 69px;
+    border-top: 1px solid#525252;
+}
+
+.modal-backdrop.in {
+    opacity: 0.9;
+}
+
+.modal-body {
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 12px;
+}
+
+.modal {
+    background-color: rgba(58, 51, 51, 0.4);
+    padding: 5px;
+}
+
+.modal-dialog {
+    position: absolute;
+    z-index: 1;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    -ms-transform: translate(-50%, -50%) !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+    min-width: 434px !important;
+    min-height: 309px;
+}
+
+.btn-yes {
+    color: #fff;
+    background-color: #027;
+    border-color: #525252;
+    width: 100px;
+}
+
+.btn-no {
+    color: #000;
+    background-color: #fff;
+    border-color: #ccc;
+    width: 100px;
+}
+
+.modal-header {
+    height: 49px;
+    border-bottom: 1px solid #525252;
+    align-items: center;
+}
+
+.messageTitle {
+    font-size: 10pt;
+    margin-bottom: 5px;
+}
+
+.messageText {
+    font-size: 10pt;
+}
+
+.modal-dialog-publish {
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    -ms-transform: translate(-50%, -50%) !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+    max-height: 539px;
+    max-width: 1840px !important;
+}
+
+.publishContentClass {
+    max-height: 539px;
+    max-width: 1840px;
+}

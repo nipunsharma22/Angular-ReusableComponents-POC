@@ -1,0 +1,355 @@
+/*Folder Packeges*/
+
+.left-wrapper,
+.right-wrapper {
+  height: 100%;
+}
+.right-wrapper .cellItem {
+  background: #fff;
+  margin: 5px 5px;
+  height: calc(100vh - 72px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+}
+
+.header-svg {
+  margin-top: 8px;
+  padding-right: 8px;
+}
+.display-setting {
+  display: inline-flex;
+}
+
+.label-div {
+  margin-left: 15px;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/*switch*/
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 4px;
+  left: -10px;
+  right: 0px;
+  bottom: 0;
+  background-color: #525352;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #c2ed97;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #c2ed97;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*tab list*/
+
+.left-contentarea {
+  width: 30%;
+  background: #fff;
+  float: left;
+  height: calc(100vh - 8px);
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.content-filter {
+  width: 100%;
+  background: #fff;
+  float: left;
+}
+
+.content-list {
+  width: 100%;
+  background: #fff;
+  float: left;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+ul.resp-tabs-list {
+  margin: 0px;
+  padding: 0px !important;
+}
+
+.list-item-name {
+  position: relative;
+  min-height: 1px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 75%;
+  -ms-flex: 0 0 75%;
+  flex: 0 0 75%;
+  width: 100%;
+  max-width: 75%;
+  display: unset;
+  float: left;
+}
+
+.list-item-right {
+  display: block;
+  float: right;
+  text-align: right;
+}
+
+.list-item-buttons {
+  position: relative;
+  min-height: 1px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 25%;
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  width: 100%;
+  max-width: 25%;
+}
+.filter-bar {
+  width: 100%;
+  float: left;
+}
+.title-row {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-width: 0px 0px 1px 0px;
+  float: left;
+}
+.heading-row {
+  width: 100%;
+  float: left;
+  padding: 5px 10px;
+}
+.pop-down {
+  width: 100%;
+  float: left;
+  background: #eeeeee;
+  padding: 5px 10px;
+}
+
+.pop-down .allowed {
+  cursor: pointer;
+}
+.control {
+  margin: 5px 0px;
+  border-bottom: solid 1px lightgrey;
+  border-right: solid 1px lightgrey;
+  min-height: 25px;
+}
+.pop-down .label {
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: small;
+  color: gray;
+  transition: all ease-in-out 0.2s;
+  margin-right: 5px;
+}
+select {
+  border: none;
+  transition: all ease-in-out 0.2s;
+  color: #525352;
+  width: 100%;
+  resize: none;
+  overflow: hidden;
+  min-height: 30px;
+  background-color: transparent;
+  font-size: 100%;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.filter-pop-down {
+  background-color: #eeeeee;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  border: none;
+  transition: all ease-in-out 0.2s;
+  color: #525352;
+  width: 100%;
+  background-color: transparent;
+}
+
+.btn.btnClass {
+  min-width: 30px;
+  background-color: #eaeef1;
+  height: 25px;
+  color: #525352;
+  padding: 1px 6px;
+  font-size: 15px;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.7);
+  border: 1px solid #eaeef1;
+}
+.btn.add-btn {
+  border-radius: 5px;
+  border: 1px solid #000000;
+  box-shadow: 1px 1px 1px #525352;
+  min-width: 70px;
+  background-color: #027;
+  height: 25px;
+  color: #525352;
+  padding: 1px 6px;
+  font-size: 15px;
+}
+.display-setting,
+.icon {
+  float: left;
+}
+.header-title {
+  font-size: 24px;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  color: grey;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  padding: 0px 10px;
+}
+.button-bar {
+  float: right;
+  padding: 5px 0px;
+}
+.button-bar img {
+  cursor: pointer;
+  transition: all ease-in-out 0.25s;
+  height: 32px;
+  width: 32px;
+}
+.button-bar img:hover {
+  -ms-transform: rotateZ(-45deg);
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+
+.btnToggleFilter {
+  width: 32px;
+  float: left;
+}
+.btnToggleFilter img {
+  transition: all ease-in-out 0.25s;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+.filter-text {
+  display: flex;
+  align-items: center;
+  font-style: italic;
+  float: left;
+  padding: 5px 0px;
+}
+
+.filter-text span {
+  display: block;
+  color: grey;
+  transition: all ease-in-out 0.2s;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: medium;
+}
+
+.filter-search-box {
+  float: right;
+  position: relative;
+}
+
+.filter-search-input {
+  text-indent: 10px;
+  border: solid 1px #cecece !important;
+  border-radius: 20px 20px 20px 20px;
+  height: 38px;
+  max-width: 100%;
+  padding: 0px 35px 0px 5px;
+  outline: none;
+}
+.search-icon {
+  position: absolute;
+  padding-top: 2px;
+  padding-right: 6px;
+  top: 2px;
+  right: 0px;
+}
+
+@media only screen and (max-width: 1023px) {
+  .login-left {
+    height: 38%;
+    height: 38vh;
+  }
+  .login-right {
+    height: 62%;
+    height: 62vh;
+  }
+  .login-left {
+    display: none;
+  }
+  .login-right {
+    height: 100%;
+    height: 100vh;
+  }
+  .internalit-logo-b {
+    display: block;
+    position: static;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+}
+@media only screen and (min-width: 1024px) and (max-width: 2024px) {
+  .internalit-logo-b {
+    display: none;
+  }
+}
+

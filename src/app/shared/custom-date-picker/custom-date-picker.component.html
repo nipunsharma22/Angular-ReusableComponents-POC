@@ -1,0 +1,16 @@
+<mat-form-field>
+  <input ondrop="return false;"
+    matInput
+    #dateInput
+    [placeholder]="placeHolderText"
+    [matDatepicker]="picker"
+    (dateChange)="change($event)"
+    (click)="picker.open()"
+    [value]="date"
+  />
+
+  <mat-datepicker
+    #picker
+    [calendarHeaderComponent]="customHeader"
+  ></mat-datepicker>
+</mat-form-field>

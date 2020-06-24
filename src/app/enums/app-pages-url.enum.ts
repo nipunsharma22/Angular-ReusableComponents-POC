@@ -1,0 +1,19 @@
+export enum APP_PAGES_URL {
+  Dashboard,
+  FolderPackageList,
+  DeployPackageList,
+  ClientDeployment,
+  TaskList,
+  Link2DMSConfigUsageProfile,
+  Link2DMSConfigDialogBehaviours,
+  CacheList,
+  CachedDocuments,
+  LibraryTransferList,
+  EmailImportList,
+  EmailCollectionReview,
+  EasyExport,
+  TaskRunList,
+  UserList,
+  ConnectionList,
+  LogConfiguration
+}

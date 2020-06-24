@@ -1,0 +1,102 @@
+<div class="header-wrapper">
+  <div class="header">
+    <div>
+      <a href="javascript:void(0)" class="menu-icon js-menu_toggle closed"
+        (click)="isNavigationBarShown = !isNavigationBarShown">
+        <span class="menu-icon_box">
+          <img src="../../../assets/images/menu-icon.svg" width="16px">
+        </span>
+      </a>
+      <a [routerLink]="['dashboard']">
+        <div class="title">Rsystems</div>
+      </a>
+    </div>
+    <div class="separator" *ngIf="currentPage!=''">
+      <a routerLink="{{currentUrl}}">
+        <div class="page pointer"> <svg id="btnToggleMenuSvg" viewBox="0 0 32 32" class="small">
+            <path
+              d="M14.77,23.795L5.185,14.21c-0.879-0.879-0.879-2.317,0-3.195l0.8-0.801c0.877-0.878,2.316-0.878,3.194,0  l7.315,7.315l7.316-7.315c0.878-0.878,2.317-0.878,3.194,0l0.8,0.801c0.879,0.878,0.879,2.316,0,3.195l-9.587,9.585  c-0.471,0.472-1.104,0.682-1.723,0.647C15.875,24.477,15.243,24.267,14.77,23.795z">
+            </path>
+          </svg> {{ currentPage }}</div>
+      </a>
+    </div>
+
+
+    <div class="rightSide">
+      <div class="userprofile">
+        Welcome <span class="account-dropdown">
+          <span class="dropbtn">
+            Admin
+          </span>
+          <div class="dropdown-content">
+            <a routerLink="/user-profile">User Profile</a>
+            <a>Settings</a>
+            <a href="javascript:void(0)" (click)="logout()">{{ appText.default.LOGOUT_BUTTON_TEXT }}</a>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div
+    class="internalit-row menuBar open"
+    *ngIf="size != screenSizes.XS && isNavigationBarShown"
+    [@inOutAnimation]
+  >
+    <div *ngFor="let menu of navigationPages" class="header-cell">
+      <a href="javascript:void(0)" (click)="onMenuItemClick(menu.Url)">
+        <div class="displayIcons">
+          <div [innerHTML]="menu.Svg | safeHtml" class="divCss"></div>
+          <span class="navMenuText">{{ menu.DisplayName }}</span>
+        </div>
+      </a>
+    </div>
+  </div> -->
+  <!-- <div
+    *ngIf="size == screenSizes.XS && isSideBarShown"
+    [@inOutAnimation]
+    class="sideBar"
+  >
+   <div *ngFor="let menu of navigationPages">
+        <a  href="javascript:void(0)"(click)="onMenuItemClick(menu.Url)" >
+          <div class="sideBarMenuitem">
+            <div [innerHTML]="menu.Svg | safeHtml"></div>
+            <span class="sideMenuText">{{ menu.DisplayName }}</span>
+          </div>
+        </a>
+      </div>
+  
+  </div> -->
+  <div [ngClass]="{'small': !isNavigationBarShown,'side_menu': isNavigationBarShown}" *ngIf="isNavigationBarShown">
+    <div class="burger_box">
+      <div class="menu-icon-container">
+        <a (click)="isNavigationBarShown = !isNavigationBarShown" class="menu-icon js-menu_toggle closed">
+          <span class="menu-icon_box">
+            <img src="../../../assets/images/close-icon.svg" width="16px">
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="col-12 p-4 pl-5">
+      <h2 class="menu_title">Switch To</h2>
+      <ul class="list_load">
+        <li class="list_item"><a href="#"><i class="fab fa-slack"></i> <span>slack</span></a></li>
+        <li class="list_item"><a href="#"><i class="fab fa-stumbleupon"></i> <span>stumbleupon</span></a></li>
+        <li class="list_item"><a href="#"><i class="fab fa-google"></i> <span>google</span></a></li>
+        <li class="list_item"><a href="#"><i class="fab fa-stumbleupon"></i> <span>stumbleupon</span></a></li>
+        <li class="list_item"><a href="#"><i class="fab fa-slack"></i> <span>slack</span></a></li>
+        <li class="list_item"><a href="#"><i class="fab fa-stumbleupon"></i> <span>stumbleupon</span></a></li>
+        <li class="list_item"><a href="#"><i class="fab fa-slack"></i> <span>slack</span></a></li>
+      </ul>
+      <!-- <ul class="list_load" [@listAnimation]="navigationPages.length" (@listAnimation.start)="logAnimation($event)"
+        (@listAnimation.done)="logAnimation($event)">
+
+        <li *ngFor="let menu of navigationPages" class="list_item">
+          <a href="javascript:void(0)" (click)="onMenuItemClick(menu.Url)">
+            <i [ngClass]="menu.Svg"></i> <span>{{menu.Icon}} {{menu.DisplayName}}</span></a>
+        </li>
+      </ul> -->
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div>
+  <ngx-datatable
+  class="bootstrap"
+  [columnMode]="ColumnMode.flex"
+  [treeFromRelation]="'manager'"
+  [treeToRelation]="'name'"
+  [rows]="rows"
+  (treeAction)="onTreeAction($event)"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  rowHeight="auto"
+  [limit]="5"
+>
+  <ngx-datatable-column name="Name" [flexGrow]="1" [isTreeColumn]="true">
+    <ng-template let-value="value" ngx-datatable-cell-template>
+      {{ value }}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Gender" [flexGrow]="1">
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+      {{ value }}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Age" [flexGrow]="1">
+    <ng-template let-value="value" ngx-datatable-cell-template>
+      {{ value }}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Company" [flexGrow]="1">
+    <ng-template let-value="value" ngx-datatable-cell-template>
+      {{ value }}
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>
+</div>
+

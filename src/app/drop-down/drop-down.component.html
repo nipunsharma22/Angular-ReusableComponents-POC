@@ -1,0 +1,27 @@
+
+<!-- {{dropdownList | json}} -->
+<div>
+  <label>Multi Selection</label>
+
+<ng-multiselect-dropdown
+  [placeholder]="'custom placeholder'"
+  [(ngModel)]="selectedItems"
+  [settings]="dropdownSettings"
+  [data]="dropdownList"
+  (onSelect)="onItemSelect($event)"
+  (onSelectAll)="onSelectAll($event)"
+>
+</ng-multiselect-dropdown>
+</div>
+<div style="height: 50px;"></div>
+<div><label>Single Selection</label>
+<ng-multiselect-dropdown
+  [placeholder]="'custom placeholder'"
+  [(ngModel)]="selectedSeingleItems"
+  [settings]="dropdownsingleSettings"
+  [data]="dropdownSingleList"
+  (onSelect)="onItemSelect($event)"
+  (onSelectAll)="onSelectAll($event)"
+>
+</ng-multiselect-dropdown>
+</div>

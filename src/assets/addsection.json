@@ -1,0 +1,17 @@
+[ 
+
+    {   "id":"1",
+        "page":"Connections",      
+        "controls": 
+            [        
+                {
+                 "type":"textbox",
+                  "label":"Name"                  
+                },
+                {
+                "type": "button",
+                "text": "Add"
+                }              
+            ]
+    }
+]

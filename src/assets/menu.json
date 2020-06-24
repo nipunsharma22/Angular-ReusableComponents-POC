@@ -1,0 +1,80 @@
+{
+  "Menus": [
+    {
+      "displayName": "",
+      "url": "dashboard",
+      "category": "",
+      "svg": "",
+      "isNavigationMenuItem": false,
+      "isDashboardItem": false,
+      "isStandAlonePage": true,
+      "order": 0
+    },
+    {
+      "displayName": "User Profile",
+      "url": "user-profile",
+      "category": "System",
+      "svg": "fab fa-slack",
+      "isNavigationMenuItem": true,
+      "isDashboardItem": true,
+      "isStandAlonePage": false,
+      "order": 1
+    },
+    {
+      "displayName": "Settings",
+      "url": "settings",
+      "category": "System",
+      "svg": "fab fa-stumbleupon",
+      "isNavigationMenuItem": true,
+      "isDashboardItem": true,
+      "isStandAlonePage": false,
+      "order": 2
+    },{
+      "displayName": "stumbleupon",
+      "url": "stumbleupon",
+      "category": "System",
+      "svg": "fab fa-slack",
+      "isNavigationMenuItem": true,
+      "isDashboardItem": true,
+      "isStandAlonePage": false,
+      "order": 3
+    },{
+      "displayName": "google",
+      "url": "google",
+      "category": "System",
+      "svg": "fab fa-google",
+      "isNavigationMenuItem": true,
+      "isDashboardItem": true,
+      "isStandAlonePage": false,
+      "order": 4
+    },{
+      "displayName": "Settings",
+      "url": "settings",
+      "category": "System",
+      "svg": "fab fa-stumbleupon",
+      "isNavigationMenuItem": true,
+      "isDashboardItem": true,
+      "isStandAlonePage": false,
+      "order": 5
+    },{
+      "displayName": "Settings",
+      "url": "settings",
+      "category": "System",
+      "svg": "fab fa-stumbleupon",
+      "isNavigationMenuItem": true,
+      "isDashboardItem": true,
+      "isStandAlonePage": false,
+      "order": 6
+    },{
+      "displayName": "Settings",
+      "url": "settings",
+      "category": "System",
+      "svg": "fab fa-stumbleupon",
+      "isNavigationMenuItem": true,
+      "isDashboardItem": true,
+      "isStandAlonePage": false,
+      "order": 7
+    }
+  ]
+}
+

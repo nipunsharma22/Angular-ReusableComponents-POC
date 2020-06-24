@@ -1,0 +1,118 @@
+.tab-close {
+  color: gray;
+  text-align: right;
+  cursor: pointer;
+}
+
+.nav-tabs {
+  width: 100% !important;
+  border-bottom: none !important;
+}
+
+.nav-tabs li {
+  text-align: center !important;
+  padding: 5px 5px !important;
+  display: block;
+  cursor: pointer;
+  color: grey;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  border-top:1px solid transparent;
+  border-left:1px solid transparent;
+  border-right:1px solid transparent;  
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  max-height: 50px;
+}
+
+.nav-tabs .active {
+  // background: #cbe7b3;
+  border: 1px solid #ccc !important;
+  border-bottom: none !important;
+  padding: 5px 5px !important;
+  text-align: center !important;
+ 
+}
+
+.img-Width {
+  width: 25px;
+}
+
+.tab-container {
+  border: 1px solid #ccc;
+  border-width: 0px 0px 0px 1px;
+  // max-height: 66vh;
+  height: calc(100vh - 266px);
+  overflow: hidden;
+}
+.client-container .tab-container{
+  border: 1px solid #ccc;
+  border-width: 0px 0px 0px 1px;
+  // max-height: 66vh;
+  height: auto !important;
+  overflow: hidden;  
+}
+
+ul.tab-navigation {
+  margin-bottom: -1px !important
+}
+
+@media screen and (min-width:1025px) and (max-width:1200px) 
+{
+
+
+.tab-container {
+  border: 1px solid #ccc;
+  border-width: 0px 0px 0px 1px;
+  // max-height: 66vh;
+  height: calc(100vh - 248px);
+}
+.client-container .tab-container{
+  border: 1px solid #ccc;
+  border-width: 0px 0px 0px 1px;
+  // max-height: 66vh;
+  height: auto !important;
+  overflow: hidden;  
+}
+}
+@media screen and (min-width:768px) and (max-width:1440px) 
+{
+  .nav-tabs li.col-tabs
+  {
+    font-size: 14px;
+}
+.nav-tabs li.col-tabs span.tabs-item
+  {
+    font-size: 1em;
+  }
+  .img-Width {
+    width: 20px;
+  }
+
+}
+
+
+@media screen and (min-width:1600px) and (max-width:1900px) 
+{
+.tab-container {
+  border: 1px solid #ccc;
+  border-width: 0px 0px 0px 1px;
+  height: calc(100vh - 262px);
+}
+.client-container .tab-container {
+  border: 1px solid #ccc;
+  border-width: 0px 0px 0px 1px;
+  // max-height: 66vh;
+  height: auto !important;
+  overflow: hidden;
+}
+
+}
+
+
+
+

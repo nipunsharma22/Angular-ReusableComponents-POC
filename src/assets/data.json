@@ -1,0 +1,6 @@
+{
+  "Info": "Information messages, normally enabled by default. Less impact on performance",
+  "Debug": "Debugging information, less detailed than trace",
+  "Trace": "Very detailed logs, enable this level for specific troubleshooting. Will impact performance significantly",
+  "Input": "Contains all API and iManage API inputs to aid in troubleshooting Will impact performance significantly"
+}

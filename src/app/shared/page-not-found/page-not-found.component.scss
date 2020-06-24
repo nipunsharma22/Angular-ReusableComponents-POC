@@ -1,0 +1,90 @@
+.carousel-inner {
+    position: relative;
+    width: 100% !important;
+    overflow: hidden;
+}
+
+.carousel-inner .item {
+    height: 500px !important;
+}
+
+img {
+    width: 100% !important;
+    height: 500px !important;
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 20px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+#about-slider .carousel-caption {
+    display: table;
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transformn: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#about-slider .carousel-caption h1 {
+    text-transform: uppercase;
+    font-size: 13em;
+}
+
+#about-slider .carousel-caption h2 {
+    font-size: 340%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav,
+.nav {
+    font-family: "Montserrat", Helvetica, sans-serif;
+    font-weight: 400;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.carousel-caption .btn {
+    text-shadow: none;
+}
+
+.btn-trans {
+    background: transparent;
+}
+
+.btn-white {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn {
+    border-radius: 0px;
+    padding: 1.4em 3.5em;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: "Montserrat", Helvetica, sans-serif;
+}

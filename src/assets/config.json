@@ -1,0 +1,11 @@
+{
+  "ServiceRootUrls": {
+    "gatewayServiceUrl": "http://localhost:8080/"
+  },
+  "ServiceUrls": {
+    "getCurrentUserServiceUrl": "v1/dashboard",
+    "getUserByUserName": "api/v1/users?userName=",
+    "getJwtUserToken": "v1/users/login",
+    "getJwtUserSecurityToken": "api/v1/token",
+    "getRefreshedJwtUserSecurityToken": "api/v1/domain/token/refresh" }
+}

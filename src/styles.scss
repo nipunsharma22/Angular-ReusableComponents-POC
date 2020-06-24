@@ -1,0 +1,99 @@
+@import "https://fonts.googleapis.com/css?family=Raleway:300,700";
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+.bodyContainer {
+    background-color: #048;
+    margin: 0px;
+    height: 100%;
+    cursor: default;
+}
+
+body {
+    background: #048;
+    background: -webkit-linear-gradient(left top, #027, #48a);
+    background: -moz-linear-gradient(bottom right, #027, #48a);
+    background: linear-gradient(to bottom right, #027, #48a);
+    color: #fff;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 140%;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    width: 100%;
+}
+
+button {
+    background-color: white;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+button.selected {
+    background-color: #b3e5fc;
+}
+
+label {
+    padding: 0px;
+}
+
+.autocomplete-container .input-container input,
+.autocomplete-container {
+    height: 39px !important;
+}
+
+.mat-option {
+    line-height: normal !important;
+    white-space: normal !important;
+    height: auto !important;
+    padding: 8px 10px !important;
+    border: 1px solid #c8c8c8;
+    border-width: 1px 0px 0px 0px;
+}
+
+.cdk-overlay-pane {
+    margin-top: -1px !important;
+}
+
+.mat-option .user-icon {
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.mat-option .user-icon img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mat-autocomplete-panel {
+    max-height: 220px !important;
+}
+
+.mat-option-text {
+    overflow: visible !important;
+    width: 100%;
+}
+
+.mat-option .user-name {
+    word-break: break-all;
+    overflow-wrap: break-word;
+    justify-content: center;
+    margin: auto;
+}
+
+.mat-option .user-name p {
+    word-break: break-all;
+    overflow-wrap: break-word;
+    padding: 0px;
+    margin: 0px;
+}
+
+/**
+CSS for calender design changes
+*/
+.mat-calendar-content{
+background-color: green!important;
+}

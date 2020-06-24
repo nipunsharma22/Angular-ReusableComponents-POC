@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width:100%!important;
+    max-width:100%;
+}
+
+.dashboard .item {
+    height: 160px;
+    width: 160px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.dashboard .item:hover{
+    background-color: rgba(255,255,255,.1);;
+}
+a, a:hover, a:focus, a:visited {
+    text-decoration: none !important;
+    transition: all ease-in-out .25s;
+}
+.content {
+   // color: #525352;
+    font-size: 18px;
+    font-weight: 500;
+}
+.dashboard .content:hover{
+    color: #fff;
+}
+
+div.svg svg{
+    width: 110px!important;
+    height: 110px!important;
+    display: block;
+    margin: 10px auto 10px auto;
+}
+
+ul li a{
+    color:#fff;
+}
+ul li {
+    list-style: none;
+}

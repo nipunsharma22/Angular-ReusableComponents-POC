@@ -1,0 +1,242 @@
+<!-- Basic Modal -->
+<div style="display: block !important;" *ngIf="message && message?.type == 'OK_AND_CANCEL_CONFIRMATION'" class="modal"
+  tabindex="-1" role="dialog">
+  <div style="min-width:434px" class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" [@simpleFadeAnimation]>
+      <div class="modal-header">
+        <h4 class="modal-title">
+          <!-- <span class="logo">
+            <img width="25px" height="25px" src="./assets/images/logo.svg" />
+          </span>  -->
+          {{ message.title }}
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="message.cancelFunc()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- -->
+        <div>
+          <div class="messageTitle" style="display:inline;word-break: break-word" [innerHTML]="message.messageTitle">
+          </div>
+          <a *ngIf="
+              (message.title == modalConstant.TEST_CONNECTION_TITLE &&
+                message.messageTitle.indexOf(
+                  appConstant.FAILED_TO_CONNECT_TEXT
+                ) > -1) ||
+              (message.title == modalConstant.SAVE_MODAL_TITLE &&
+                message.messageTitle.indexOf(
+                  appConstant.FAILED_TO_CONNECT_TEXT
+                ) > -1)||
+              (message.title == modalConstant.PUBLISH_UNPUBLISH_CONNECTION_TITLE &&
+                message.messageTitle.indexOf(
+                  appConstant.FAILED_TO_CONNECT_TEXT
+                ) > -1)
+            " href="javascript:void(0)" style="margin-top: 1pt;margin-left: 4px;"
+            (click)="testConnectionDetailsPrompt()">
+            Details</a>
+        </div>
+        <div class="messageText" [innerHTML]="message.message"></div>
+        <ng-container *ngIf="message.switchbox"><span><label class="switch">
+              <input type="checkbox" (click)="confirmDialogService.getsVal(sVal)" [checked]="sVal" [(ngModel)]="sVal"
+                class="publish-unpublish" /><span class="slider round"></span></label></span>
+        </ng-container>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-save" (click)="message.okFunc()"
+          *ngIf="message.btnOkText === 'Save & Publish'">
+          {{ message.btnOkText }}
+        </button>
+
+        <button type="button" class="btn btn-yes" (click)="message.okFunc()"
+          *ngIf="message.btnOkText !== 'Save & Publish'">
+          {{ message.btnOkText }}
+        </button>
+        <button *ngIf="message.btnCancelText !== ''" type="button" class="btn btn-no" (click)="message.cancelFunc()">
+          {{ message.btnCancelText }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="display: block !important;" *ngIf="message && message?.type == 'SIGN_OUT_USER_CONFIRMATION'" class="modal"
+  tabindex="-1" role="dialog">
+  <div style="min-width:434px" class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" [@simpleFadeAnimation]>
+      <div class="modal-header">
+        <h4 class="modal-title">
+          <!-- <span class="logo"
+            ><img width="25px" height="25px" src="./assets/images/logo.svg"
+          /></span> -->
+          {{ message.messageTitle | titlecase }}
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modal-body-small">
+        <div class="messageText" [innerHTML]="message.message"></div>
+      </div>
+      <div class="modal-footer modal-footer-small">
+        <button type="button" class="btn btn-save" (click)="message.okFunc()"
+          *ngIf="message.btnOkText === 'Save & Publish'">
+          {{ message.btnOkText }}
+        </button>
+
+        <button type="button" class="btn btn-yes" (click)="message.okFunc()"
+          *ngIf="message.btnOkText !== 'Save & Publish'">
+          {{ message.btnOkText }}
+        </button>
+        <button *ngIf="message.btnCancelText !== ''" type="button" class="btn btn-no" (click)="message.cancelFunc()">
+          {{ message.btnCancelText }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--TEXT Inputs Dialog--->
+
+<div style="display: block !important;" *ngIf="message && message?.type == 'ASK_TEXT_INPUT'" class="modal" tabindex="-1"
+  role="dialog">
+  <div style="min-width:434px" class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" [@simpleFadeAnimation]>
+      <div class="modal-header">
+        <h4 class="modal-title">
+          <!-- <span class="logo"
+            ><img width="25px" height="25px" src="./assets/images/logo.svg"
+          /></span> -->
+          {{ message.title }}
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="messageTitle" [innerHTML]="message.messageTitle"></div>
+        <div class="col-lg-12 mb15">
+          <div class="form-group">
+            <input type="text" class="form-control" name="address" [(ngModel)]="confirmDialogService.inputText" />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-yes" (click)="message.okFunc()">
+          {{ message.btnOkText }}
+        </button>
+        <button *ngIf="message.btnCancelText !== ''" type="button" class="btn btn-no" (click)="message.cancelFunc()">
+          {{ message.btnCancelText }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!----->
+
+<!-- Single button Dialog-->
+<div style="display: block !important;" *ngIf="message && message?.type == 'OK_CONFIRMATION'" class="modal"
+  tabindex="-1" role="dialog">
+  <div style="min-width:434px" class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" [@simpleFadeAnimation]>
+      <div class="modal-header">
+        <h4 class="modal-title">
+          <!-- <span class="logo">
+            <img width="25px" height="25px" src="./assets/images/logo.svg" />
+          </span> -->
+          {{ message.title }}
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="messageTitle" [innerHTML]="message.messageTitle"></div>
+        <div class="messageText" [innerHTML]="message.message"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-save w-25" (click)="onOkClick(message.statusCode)">
+          {{ message.btnOkText }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Publish Delete and cancel pop up -->
+
+<div style="display: block !important;" *ngIf="message && message?.type == 'PUBLISH_DELETE_AND_CANCEL_CONFIRMATION'"
+  class="modal fpWrap" tabindex="-1" role="dialog">
+  <div style="min-width:434px" class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content fpWrapContent" [@simpleFadeAnimation]>
+      <div class="modal-header">
+        <h4 class="modal-title">
+          <!-- <span class="logo"
+            ><img width="25px" height="25px" src="./assets/images/logo.svg"
+          /></span> -->
+          {{ message.title }}
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="message.cancelFunc()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- -->
+        <div>
+          <div class="messageTitle" style="display:inline;word-break: break-word" [innerHTML]="message.messageTitle">
+          </div>
+
+        </div>
+        <div class="messageText" [innerHTML]="message.message"></div>
+        <div class="messageText" [innerHTML]="message.message"></div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-yes" (click)="message.publishFunc()">
+          Publish
+        </button>
+        <button type="button" class="btn btn-yes" (click)="message.okFunc()">
+          Delete
+        </button>
+        <button *ngIf="message.btnCancelText !== ''" type="button" class="btn btn-no" (click)="message.cancelFunc()">
+          {{ message.btnCancelText }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="display: block !important;" *ngIf="message && message?.type == 'ANOTHER_USER_UPDATED'" class="modal"
+  tabindex="-1" role="dialog">
+  <div style="min-width:434px" class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" [@simpleFadeAnimation]>
+      <div class="modal-header">
+        <h4 class="modal-title">
+          <!-- <span class="logo">
+            <img width="25px" height="25px" src="./assets/images/logo.svg" />
+          </span> -->
+          {{ message.title }}
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="messageTitle" [innerHTML]="message.messageTitle"></div>
+        <div class="messageText" [innerHTML]="message.message"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-save" (click)="message.saveFunc()">
+          {{ message.btnSaveText }}
+        </button>
+
+        <button type="button" class="btn btn-yes" (click)="message.refreshFunc()">
+          {{ message.btnRefreshText }}
+        </button>
+        <button type="button" class="btn btn-no" (click)="message.cancelFunc()">
+          {{ message.btnCancelText }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

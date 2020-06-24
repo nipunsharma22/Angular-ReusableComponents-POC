@@ -1,0 +1,33 @@
+<div class="container bodyContainer1">
+    <div>
+        <h4 class="text-info">Displaying Employee data</h4>
+        <table class="table table-bordered bodyContainer1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Full Name</th>
+                    <th>Phone No.</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Nationality</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of people | paginate: { itemsPerPage: count, currentPage: p }; index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{e.name}}</td>
+                    <td>{{e.phoneNo}}</td>
+                    <td>{{e.email}}</td>
+                    <td>{{e.gender}}</td>
+                    <td>{{e.nationality}}</td>
+                </tr>
+            </tbody>
+        </table>
+         <!--Including the pagination control.-->
+    <div class="text-right">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    </div>
+
+   
+</div>
