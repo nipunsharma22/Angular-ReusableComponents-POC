@@ -21,6 +21,7 @@ export class PaginationPocComponent implements OnInit {
   disabled = false;
   page = 1;
 
+  /* ng-bootstrap package */
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
