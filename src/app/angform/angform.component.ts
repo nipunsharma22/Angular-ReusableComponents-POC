@@ -1,9 +1,8 @@
-// import { Component, OnInit, ChangeDetectorRef, ElementRef, ViewChild } from '@angular/core';
-// import { FormBuilder, FormArray, Validators } from "@angular/forms";
-// import { ValidatePassword } from "../must-match/validate-password";
 import { Component, OnInit } from '@angular/core';  
 import { FormGroup, FormBuilder, Validators, FormControl, NgForm, FormArray } from '@angular/forms';  
-//import { FormArray } from '@angular/forms/src/model';  
+//import { FormArray } from '@angular/forms/src/model'; 
+// import custom validator to validate that password and confirm password fields match
+import { MustMatch } from '../must-match/validate-password'; 
 
 
 
@@ -14,7 +13,9 @@ import { FormGroup, FormBuilder, Validators, FormControl, NgForm, FormArray } fr
 })
 export class AngformComponent implements OnInit {
   registrationForm: FormGroup;  
+  registerFormNew: FormGroup; 
   isSubmitted: boolean = false;  
+  submittedNew = false;
   City: any = ['Florida', 'South Dakota', 'Tennessee', 'Michigan']
   constructor(private formBuilder: FormBuilder) {  
     this.registrationForm = this.formBuilder.group({  
@@ -64,8 +65,37 @@ export class AngformComponent implements OnInit {
   }
 
   ngOnInit() {  
+    this.registerFormNew = this.formBuilder.group({
+      title: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', Validators.required],
+      acceptTerms: [false, Validators.requiredTrue]
+  }, {
+      validator: MustMatch('password', 'confirmPassword')
+  });
     console.log("Registration Form ", this.registrationForm);
-  }  
+  } 
+  get f() { return this.registerFormNew.controls; }
+
+  onSubmit() {
+      this.submittedNew = true;
+
+      // stop here if form is invalid
+      if (this.registerFormNew.invalid) {
+          return;
+      }
+
+      // display form values on success
+      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerFormNew.value, null, 4));
+  }
+
+  onReset() {
+      this.submittedNew = false;
+      this.registerFormNew.reset();
+  } 
   
   onRegistrationFormSubmit() {  
     this.isSubmitted = true;  

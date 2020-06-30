@@ -16,8 +16,10 @@ h1 {
 
 h5 {
   font-weight: 600;
+  color:#222 !important;
 }
-
+.f2 .form-group label{color:#222 !important}
+select{height: auto !important;}
 .custom-wrapper {
   max-width: 460px;
   margin: 0 auto 150px;
