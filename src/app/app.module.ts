@@ -66,6 +66,7 @@ import { GirdComponent } from './gird/gird.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { NotificationComponent } from './notification/notification.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 @Injectable()
 export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
   parse(url: string): UrlTree {
@@ -139,6 +140,7 @@ export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
     ChartsModule,
     NgMultiSelectDropDownModule,
     NgxDatatableModule,
+    PaginationModule.forRoot()
   ],
   providers: [
     Title,
