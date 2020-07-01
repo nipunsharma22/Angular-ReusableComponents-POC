@@ -1,20 +1,28 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
-import { FileQueueObject, FileUploaderService } from '../services/file-uploader.service';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewChild,
+} from "@angular/core";
+import { Observable } from "rxjs";
+import {
+  FileQueueObject,
+  FileUploaderService,
+} from "../services/file-uploader.service";
 
 @Component({
-  selector: 'file-uploader, [file-uploader]',
-  templateUrl: './file-uploader.component.html',
-  styleUrls: ['./file-uploader.component.scss']
+  selector: "file-uploader, [file-uploader]",
+  templateUrl: "./file-uploader.component.html",
+  styleUrls: ["./file-uploader.component.scss"],
 })
 export class FileUploaderComponent implements OnInit {
-
   @Output() onCompleteItem = new EventEmitter();
 
-  @ViewChild('fileInput') fileInput;
+  @ViewChild("fileInput") fileInput;
   queue: Observable<FileQueueObject[]>;
 
-  constructor(public uploader: FileUploaderService) { }
+  constructor(public uploader: FileUploaderService) {}
 
   ngOnInit() {
     this.queue = this.uploader.queue;
@@ -23,7 +31,7 @@ export class FileUploaderComponent implements OnInit {
 
   completeItem = (item: FileQueueObject, response: any) => {
     this.onCompleteItem.emit({ item, response });
-  }
+  };
 
   addToQueue() {
     const fileBrowser = this.fileInput.nativeElement;

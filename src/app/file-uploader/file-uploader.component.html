@@ -1,11 +1,16 @@
 <div class="row">
 
-	<div class="col-md-3">
-		<h3>Select files</h3>
+	<div class="col-lg-6">
+		<h3>Select single file</h3>
+		<input type="file" #fileInput (change)="addToQueue()" />
+	</div>
+
+	<div class="col-lg-6">
+		<h3>Select single/multiple file</h3>
 		<input type="file" #fileInput multiple (change)="addToQueue()" />
 	</div>
 
-	<div class="col-md-9">
+	<div class="col-md-12">
 		<h3>Upload queue</h3>
 		<table class="table-headed table-striped">
 			<thead>
