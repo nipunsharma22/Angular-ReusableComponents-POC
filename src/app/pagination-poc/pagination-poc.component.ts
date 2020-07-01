@@ -44,3 +44,4 @@ export class PaginationPocComponent implements OnInit {
     this.status = this.rotate ? "ON" : "OFF";
   }
 }
+
