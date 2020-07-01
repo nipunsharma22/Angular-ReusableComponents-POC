@@ -5,6 +5,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
+//import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { AppRoutingModule } from "./app-routing.module";
 import { ToastrModule } from "ngx-toastr";
 import { AppComponent } from "./app.component";
