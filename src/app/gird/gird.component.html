@@ -1,4 +1,5 @@
 <div>
+  <div><strong>Row Detail Grid</strong></div>
   <ngx-datatable
           #myTable
           class="material expandable"
@@ -6,7 +7,6 @@
           [headerHeight]="50"
           [footerHeight]="50"
           [rowHeight]="50"
-          [scrollbarV]="false"
           [rows]="rows"
           [limit]="5"
           (page)="onPage($event)"
@@ -61,4 +61,41 @@
           </ngx-datatable-column>
           <ngx-datatable-column name="Age"></ngx-datatable-column>
         </ngx-datatable>
+      </div>
+      <div style="height: 50px;"></div>
+      <div><strong>Tree Grid</strong></div>
+      <div>
+        <ngx-datatable
+        class="material"
+        [columnMode]="ColumnMode.flex"
+        [treeFromRelation]="'manager'"
+        [treeToRelation]="'name'"
+        [rows]="rows1"
+        (treeAction)="onTreeAction($event)"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="auto"
+        [limit]="5"
+      >
+        <ngx-datatable-column name="Name" [flexGrow]="1" [isTreeColumn]="true">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{ value }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Gender" [flexGrow]="1">
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            {{ value }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Age" [flexGrow]="1">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{ value }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Company" [flexGrow]="1">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{ value }}
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
       </div>
