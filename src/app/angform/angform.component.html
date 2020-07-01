@@ -1,6 +1,7 @@
 <div class="container">
 
   <div class="row">
+    <div class="col-lg-6">
     <form [formGroup]="registrationForm" (ngSubmit)="onRegistrationFormSubmit()">
       <div class="col-sm-12">
         <p>Registration Form</p>
@@ -50,30 +51,6 @@
             <label>State</label>
             <input type="text" placeholder="Enter State Name Here.." formControlName="state" class="form-control" />
           </div>
-
-          <!-- <div class="col-sm-4 form-group">
-            <label">City</label>
-            <select class="custom-select d-block w-100" (change)="changeCity($event)" formControlName="cityName">
-              <option value="">Choose...</option>
-              <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
-            </select>
-          </div>
-
-          
-            <div class="col-sm-4 form-group">
-              <div class="custom-control custom-radio">
-                <input id="male" type="radio" class="custom-control-input" name="gender" formControlName="gender" value="male"
-                  checked>
-                <label class="custom-control-label" for="male">Male</label>
-              </div>
-  
-              <div class="custom-control custom-radio">
-                <input id="female" type="radio" class="custom-control-input" name="gender" formControlName="gender" value="female">
-                <label class="custom-control-label" for="female">Female</label>
-              </div>
-            </div> -->
-
-
 
           <div class="col-sm-4 form-group">
             <label>PinCode</label>
@@ -153,16 +130,9 @@
         <button type="submit" class="btn btn-lg btn-info">Submit</button>
       </div>
     </form>
-  </div>
+ 
 </div>
-
-
-
-
-
-
-
-<!-- main app container -->
+<div class="col-lg-6">
 <div class="card m-3">
   <h5 class="card-header">Angular 9 Reactive Form Validation</h5>
   <div class="card-body">
@@ -234,3 +204,13 @@
       </form>
   </div>
 </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
