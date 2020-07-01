@@ -17,6 +17,7 @@ export class GridViewComponent implements OnInit {
 
 // Grid Two Variables 
   rows1 = [];
+  auto = "100%";
   ColumnMode1 = ColumnMode;
   temp: any = [
   {
