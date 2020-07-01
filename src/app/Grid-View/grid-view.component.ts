@@ -4,10 +4,10 @@ import { ColumnMode } from '@swimlane/ngx-datatable';
 
 @Component({
   selector: 'app-gird',
-  templateUrl: './gird.component.html',
-  styleUrls: ['./gird.component.scss']
+  templateUrl: './grid-view.component.html',
+  styleUrls: ['./grid-view.component.scss']
 })
-export class GirdComponent implements OnInit {
+export class GridViewComponent implements OnInit {
   // Grid One Variables  
   @ViewChild('myTable') table: any;
   rows: any[] = [];

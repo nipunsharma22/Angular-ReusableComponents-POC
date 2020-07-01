@@ -21,12 +21,12 @@ import { GraphformComponent } from './graphform/graphform.component';
 import { ProgressBarComponent } from '@swimlane/ngx-datatable';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { MultiSelectComponent } from 'ng-multiselect-dropdown';
-import { GirdComponent } from './gird/gird.component';
 import { DropDownComponent } from './drop-down/drop-down.component';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
 import { DatepickerComponent } from './datepicker/datepicker.component'
 import { NotificationComponent } from './notification/notification.component'
 import { DialogComponent } from './dialog/dialog.component'
+import { GridViewComponent } from './Grid-View/grid-view.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -90,7 +90,7 @@ const routes: Routes = [
     path: 'dropdown', component: DropDownComponent
   },
   {
-    path: 'grid', component: GirdComponent
+    path: 'gridView', component: GridViewComponent,
   },
   { path: "**", redirectTo: "/pagenotfound", pathMatch: "full" },
   {

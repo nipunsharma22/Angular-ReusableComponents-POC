@@ -61,12 +61,13 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { DropDownComponent } from './drop-down/drop-down.component';
-import { GirdComponent } from './gird/gird.component';
+
 
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { NotificationComponent } from './notification/notification.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { GridViewComponent } from './Grid-View/grid-view.component';
 @Injectable()
 export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
   parse(url: string): UrlTree {
@@ -107,7 +108,7 @@ export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
     ProgressbarComponent,
     MenuBarComponent,
     DropDownComponent,
-    GirdComponent,
+    GridViewComponent,
     DatepickerComponent,
     NotificationComponent,
     DialogComponent,
