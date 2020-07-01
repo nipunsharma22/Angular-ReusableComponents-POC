@@ -1,33 +1,88 @@
 <div class="container bodyContainer1">
-    <div>
-        <h4 class="text-info">Displaying Employee data</h4>
-        <table class="table table-bordered bodyContainer1">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Full Name</th>
-                    <th>Phone No.</th>
-                    <th>Email</th>
-                    <th>Gender</th>
-                    <th>Nationality</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let e of people | paginate: { itemsPerPage: count, currentPage: p }; index as i">
-                    <td>{{i+1}}</td>
-                    <td>{{e.name}}</td>
-                    <td>{{e.phoneNo}}</td>
-                    <td>{{e.email}}</td>
-                    <td>{{e.gender}}</td>
-                    <td>{{e.nationality}}</td>
-                </tr>
-            </tbody>
-        </table>
-         <!--Including the pagination control.-->
-    <div class="text-right">
-        <pagination-controls (pageChange)="p = $event"></pagination-controls>
-    </div>
+  <div>
+    <h4 class="text-info">Displaying Employee data</h4>
+    <table class="table table-bordered bodyContainer1">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Full Name</th>
+          <th>Phone No.</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Nationality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let content of returnedArray; index as i">
+          <td>{{ content.id }}</td>
+          <td>{{ content.name }}</td>
+          <td>{{ content.phoneNo }}</td>
+          <td>{{ content.email }}</td>
+          <td>{{ content.gender }}</td>
+          <td>{{ content.nationality }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--Basic Pagination-->
+    <div class="row">
+      <pagination
+        [totalItems]="contentArray.length"
+        (pageChanged)="pageChanged($event)"
+        [maxSize]="maxSize"
+      ></pagination>
     </div>
 
-   
+    <!--Pagination with boundary links-->
+    <div class="row">
+      <pagination
+        [boundaryLinks]="showBoundaryLinks"
+        [totalItems]="contentArray.length"
+        (pageChanged)="pageChanged($event)"
+        [maxSize]="maxSize"
+      ></pagination>
+    </div>
+    
+    <!--Pagination with toggle direction links-->
+      <div class="row">
+          <pagination
+            [directionLinks]="showDirectionLinks"
+            [totalItems]="contentArray.length"
+            (pageChanged)="pageChanged($event)"
+            [maxSize]="maxSize"
+          ></pagination>
+          <button type="button" (click)="showDirectionLinks = !showDirectionLinks">
+            Hide/show direction links
+          </button>
+      </div>
+    
+    <!--Pagination with toggle state-->
+      <div class="row">
+          <pagination
+            [disabled]="disabled"
+            [totalItems]="contentArray.length"
+            (pageChanged)="pageChanged($event)"
+          ></pagination>
+          <button type="button" (click)="toggleState()">
+            Toggle state
+          </button>
+      </div>
+      
+    <!--Pagination with toggle rotate-->
+        <div class="row">
+            <pagination
+            [totalItems]="contentArray.length"
+            (pageChanged)="pageChanged($event)"
+              [rotate]="rotate"
+              [maxSize]="maxSize"
+            ></pagination>
+            <button
+            type="button"
+            [style.background-color]="rotate ? 'blue' : 'red'"
+            (click)="toggleBtn()"
+          >
+            Link center is {{ status }}
+          </button>      
+      </div>
+  </div>
 </div>
+
