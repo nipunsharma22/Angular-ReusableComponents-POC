@@ -46,7 +46,9 @@
     <div class="card-body">
        <!-- ngb Accordion starts -->
        <div class="accordion-shadow">
-       <ngb-accordion [destroyOnHide]='false' [closeOthers]="true" (panelChange)='panelShadow($event, shadow)' activeIds="panel2" #shadow>
+       <ngb-accordion [destroyOnHide]='false' [closeOthers]="true" (panelChange)='panelShadow(
+          
+       )' activeIds="panel2" #shadow>
           <ngb-panel id="panel1">
              <ng-template ngbPanelTitle>
                 <span>Accordion Item 1 </span>

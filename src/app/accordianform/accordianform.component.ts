@@ -11,7 +11,10 @@ export class AccordianformComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  panelShadow(){
 
+  }
 }
 
 
