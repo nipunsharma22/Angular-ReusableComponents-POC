@@ -68,6 +68,7 @@ import { NotificationComponent } from './notification/notification.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { GridViewComponent } from './Grid-View/grid-view.component';
+import { FileUploadModule } from 'ng2-file-upload';
 @Injectable()
 export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
   parse(url: string): UrlTree {
@@ -141,7 +142,8 @@ export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
     ChartsModule,
     NgMultiSelectDropDownModule,
     NgxDatatableModule,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    FileUploadModule
   ],
   providers: [
     Title,

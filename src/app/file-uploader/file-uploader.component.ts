@@ -1,40 +1,51 @@
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-  ViewChild,
-} from "@angular/core";
-import { Observable } from "rxjs";
-import {
-  FileQueueObject,
-  FileUploaderService,
-} from "../services/file-uploader.service";
+import { Component } from '@angular/core';
+import { FileUploader } from 'ng2-file-upload';
+ 
+// const URL = '/api/';
+const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 
 @Component({
   selector: "file-uploader, [file-uploader]",
   templateUrl: "./file-uploader.component.html",
   styleUrls: ["./file-uploader.component.scss"],
 })
-export class FileUploaderComponent implements OnInit {
-  @Output() onCompleteItem = new EventEmitter();
-
-  @ViewChild("fileInput") fileInput;
-  queue: Observable<FileQueueObject[]>;
-
-  constructor(public uploader: FileUploaderService) {}
-
-  ngOnInit() {
-    this.queue = this.uploader.queue;
-    this.uploader.onCompleteItem = this.completeItem;
+export class FileUploaderComponent {
+ 
+  uploader:FileUploader;
+  hasBaseDropZoneOver:boolean;
+  hasAnotherDropZoneOver:boolean;
+  response:string;
+ 
+  constructor (){
+    this.uploader = new FileUploader({
+      url: URL,
+      disableMultipart: true, // 'DisableMultipart' must be 'true' for formatDataFunction to be called.
+      formatDataFunctionIsAsync: true,
+      formatDataFunction: async (item) => {
+        return new Promise( (resolve, reject) => {
+          resolve({
+            name: item._file.name,
+            length: item._file.size,
+            contentType: item._file.type,
+            date: new Date()
+          });
+        });
+      }
+    });
+ 
+    this.hasBaseDropZoneOver = false;
+    this.hasAnotherDropZoneOver = false;
+ 
+    this.response = '';
+ 
+    this.uploader.response.subscribe( res => this.response = res );
   }
-
-  completeItem = (item: FileQueueObject, response: any) => {
-    this.onCompleteItem.emit({ item, response });
-  };
-
-  addToQueue() {
-    const fileBrowser = this.fileInput.nativeElement;
-    this.uploader.addToQueue(fileBrowser.files);
+ 
+  public fileOverBase(e:any):void {
+    this.hasBaseDropZoneOver = e;
+  }
+ 
+  public fileOverAnother(e:any):void {
+    this.hasAnotherDropZoneOver = e;
   }
 }
