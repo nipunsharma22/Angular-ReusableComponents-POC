@@ -1,5 +1,10 @@
-<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-    <ngb-panel title="Simple">
+<div class="container">
+<div class="row">
+  <div class="col-lg-6">
+    
+<h3>Basic Accordian</h3>
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel title="Title One">
       <ng-template ngbPanelContent>
        <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
         aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
@@ -11,7 +16,7 @@
     </ngb-panel>
     <ngb-panel>
       <ng-template ngbPanelTitle>
-        <span>&#9733; <b>Fancy</b> title &#9733;</span>
+        <span>Title Two</span>
       </ng-template>
       <ng-template ngbPanelContent>
         <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
@@ -22,7 +27,7 @@
         labore sustainable VHS.</p>
       </ng-template>
     </ngb-panel>
-    <ngb-panel title="Disabled" [disabled]="true">
+    <ngb-panel title="Disabled Title" [disabled]="true">
       <ng-template ngbPanelContent>
        <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
         aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
@@ -33,3 +38,54 @@
       </ng-template>
     </ngb-panel>
   </ngb-accordion>
+
+</div>
+ <div class="col-lg-6">
+   <h3>Multiple Accordian</h3>
+  <div class="card">
+    <div class="card-body">
+       <!-- ngb Accordion starts -->
+       <div class="accordion-shadow">
+       <ngb-accordion [destroyOnHide]='false' [closeOthers]="true" (panelChange)='panelShadow($event, shadow)' activeIds="panel2" #shadow>
+          <ngb-panel id="panel1">
+             <ng-template ngbPanelTitle>
+                <span>Accordion Item 1 </span>
+             </ng-template>
+             <ng-template ngbPanelContent>
+                Donut caramels sweet roll bonbo
+             </ng-template>
+          </ngb-panel>
+          <ngb-panel id="panel2" cardClass="open">
+             <ng-template ngbPanelTitle>
+                <span>Accordion Item 2 </span>
+             </ng-template>
+             <ng-template ngbPanelContent>
+ 
+                tootsie roll sweet gummi bears chocolate bar.
+             </ng-template>
+          </ngb-panel>
+          <ngb-panel id="panel3">
+             <ng-template ngbPanelTitle>
+                <span>Accordion Item 3 </span>
+             </ng-template>
+             <ng-template ngbPanelContent>
+ 
+                tootsie roll sweet gummi bears chocolate bar.
+             </ng-template>
+          </ngb-panel>
+          <ngb-panel id="panel4" >
+             <ng-template ngbPanelTitle>
+                <span>Accordion Item 4 </span>
+             </ng-template>
+             <ng-template ngbPanelContent>
+                gummi bears jujubes coqqtton candy cake marshmallow. Tart cake danish dessert
+             </ng-template>
+          </ngb-panel>
+       </ngb-accordion>
+       <!-- ngb Accordion ends -->
+     </div>
+   </div>
+ </div>
+</div> 
+</div>
+</div>
